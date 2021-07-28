@@ -99,3 +99,47 @@ left join DEPT_EMPLOYEES as DE
 on CE.EMP_NO = DE.EMP_NO
 group by DE.DEPT_NO
 order by DE.DEPT_NO;
+
+-- get retiring employee info including salaries
+select E.EMP_NO,
+	E.FIRST_NAME,
+	E.LAST_NAME,
+	E.GENDER,
+	S.SALARY,
+	DE.TO_DATE
+into emp_info
+from EMPLOYEES as E
+inner join SALARIES as S
+on E.EMP_NO = S.EMP_NO
+inner join DEPT_EMPLOYEES as DE
+on E.EMP_NO = DE.EMP_NO
+where (E.BIRTH_DATE between '1952-01-01' and '1955-12-31')
+and (E.HIRE_DATE between '1985-01-01' and '1988-12-31')
+and (DE.TO_DATE = '9999-01-01');
+
+-- managers per department
+select DM.DEPT_NO,
+	D.DEPT_NAME,
+	DM.EMP_NO,
+	CE.LAST_NAME,
+	CE.FIRST_NAME,
+	DM.FROM_DATE,
+	DM.TO_DATE
+into MANAGER_INFO
+from DEPT_MANAGER as DM
+	inner join DEPARTMENTS as D
+		on (DM.DEPT_NO = D.DEPT_NO)
+	inner join CURRENT_EMP as CE
+		on (DM.EMP_NO = CE.EMP_NO);
+		
+-- list of all retirees by department
+select CE.EMP_NO,
+	CE.FIRST_NAME,
+	CE.LAST_NAME,
+	D.DEPT_NAME
+into dept_info
+from CURRENT_EMP as CE
+	inner join DEPT_EMPLOYEES as DE
+		on (CE.EMP_NO = DE.EMP_NO)
+	inner join DEPARTMENTS as D
+		on (DE.DEPT_NO = D.DEPT_NO);
