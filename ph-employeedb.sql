@@ -143,3 +143,16 @@ from CURRENT_EMP as CE
 		on (CE.EMP_NO = DE.EMP_NO)
 	inner join DEPARTMENTS as D
 		on (DE.DEPT_NO = D.DEPT_NO);
+		
+-- retirement info for sales and development teams
+select CE.EMP_NO,
+	CE.FIRST_NAME,
+	CE.LAST_NAME,
+	D.DEPT_NAME
+from CURRENT_EMP as CE
+	inner join DEPT_EMPLOYEES as DE
+		on (CE.EMP_NO = DE.EMP_NO)
+	inner join DEPARTMENTS as D
+		on (DE.DEPT_NO = D.DEPT_NO)
+where D.DEPT_NAME in ('Sales', 'Development');
+	
