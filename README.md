@@ -8,7 +8,7 @@ This analysis was intended to count and organize the names of Pewlett-Hackard em
 
 - The count of [retiring employees by title](Data/retiring_titles.csv) shows that senior engineers and senior staff will have the highest numbers of retiring employees, 29,414 and 28,254 respectively.
 - The Technique Leader, Asistant Engineer, and Manager positions each have relatively small numbers of retiring employees.
-- An analysis of [mentorship eligibility](Data/mentorship_elibigility.csv) among retiring employees produces the following counts of eligible mentors by title:
+- An analysis of [mentorship eligibility](Data/mentorship_eligibility.csv) among retiring employees produces the following counts of eligible mentors by title:
 ```
 Assistant Engineer: 29
 Engineer: 190
