@@ -17,7 +17,7 @@ Senior Staff: 569
 Staff: 155
 Technique Leader: 77
 ```
-Dividing the counts of retiring employees by these mentorship eligibility counts shows that if every eligible mentor and every replacement employee participates in the mentorship program, each mentor will need to teach roughly the following numbers of employees, rounded up to the nearest integer:
+- Dividing the counts of retiring employees by these mentorship eligibility counts shows that if every eligible mentor and every replacement employee participates in the mentorship program, each mentor will need to teach roughly the following numbers of employees, rounded up to the nearest integer:
 ```
 Assistant Engineer: 61
 Engineer: 75
